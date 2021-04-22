@@ -5,13 +5,15 @@ module.exports = {
     ecmaVersion: 2020,
     sourceType: 'module',
     ecmaFeatures: {
-      jsx: true
-    }
+      jsx: true,
+    },
   },
   extends: [
     'plugin:vue/vue3-recommended',
     'plugin:@typescript-eslint/recommended',
-    'airbnb'
+    'airbnb',
   ],
-  rules: {}
+  rules: {
+    'import/extensions': 0,
+  },
 };
