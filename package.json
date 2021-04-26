@@ -1,5 +1,5 @@
 {
-  "name": "aaa",
+  "name": "veui",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -9,6 +9,7 @@
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
+    "clipboard": "^2.0.8",
     "core-js": "^3.6.5",
     "element-ui": "^2.15.1",
     "highlight.js": "^10.7.2",
