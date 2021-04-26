@@ -7,7 +7,7 @@
         <slot></slot>
       </div>
       <el-collapse-transition>
-      <div class="component-container__code" v-show="!isHide">
+      <div class="component-container__code" v-if="!isHide">
         <div v-highlight>
           <pre>
             <code class="html xml hljs">
