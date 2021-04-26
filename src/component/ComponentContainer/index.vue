@@ -1,12 +1,13 @@
 <template>
   <div class="component-container">
     <h3>{{title}}</h3>
-    <p>{{intro}}</p>
+    <p v-if="intro">{{intro}}</p>
     <div class="component-container__wrap">
       <div class="component-container__component">
         <slot></slot>
       </div>
-      <div class="component-container__code">
+      <el-collapse-transition>
+      <div class="component-container__code" v-show="!isHide">
         <div v-highlight>
           <pre>
             <code class="html xml hljs">
@@ -15,8 +16,10 @@
           </pre>
         </div>
       </div>
-      <div class="component-container__btn">
-        <i class="el-icon-caret-bottom"></i>
+      </el-collapse-transition>
+      <div class="component-container__btn" @click="isHide = !isHide">
+        <i class="el-icon-caret-bottom" v-if="isHide"></i>
+        <i class="el-icon-caret-top" v-else></i>
       </div>
     </div>
   </div>
@@ -27,6 +30,11 @@ export default {
     title: String,
     intro: String,
     code: String,
+  },
+  data() {
+    return {
+      isHide: true,
+    };
   },
 };
 </script>
@@ -60,6 +68,8 @@ export default {
 
   &__code {
     padding: 10px;
+    overflow: hidden;
+    transition: height .3s;
   }
 
   &__btn {
