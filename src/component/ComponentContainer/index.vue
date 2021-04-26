@@ -17,16 +17,26 @@
         </div>
       </div>
       </el-collapse-transition>
-      <div class="component-container__btn" @click="isHide = !isHide">
+      <div class="component-container__btn" @click.self="isHide = !isHide">
         <i class="el-icon-caret-bottom" v-if="isHide"></i>
         <i class="el-icon-caret-top" v-else></i>
+        <el-tooltip effect="dark" content="复制" placement="top" open-delay="800">
+          <i
+            class="el-icon-document-copy component-container__copy"
+            :id="name"
+            :data-clipboard-text="code">
+          </i>
+        </el-tooltip>
       </div>
     </div>
   </div>
 </template>
 <script>
+import ClipboardJS from 'clipboard';
+
 export default {
   props: {
+    name: String,
     title: String,
     intro: String,
     code: String,
@@ -35,6 +45,20 @@ export default {
     return {
       isHide: true,
     };
+  },
+  mounted() {
+    this.clipboard = new ClipboardJS(`#${this.name}`);
+
+    this.clipboard.on('success', () => {
+      this.$message.success('复制成功');
+    });
+
+    this.clipboard.on('error', () => {
+      this.$message.success('复制失败');
+    });
+  },
+  beforeDestroy() {
+    this.clipboard.destroy();
   },
 };
 </script>
@@ -79,6 +103,20 @@ export default {
     height: 44px;
     border-top: 1px solid #ebebeb;
     cursor: pointer;
+    position: relative;
+  }
+
+  &__copy {
+    position: absolute;
+    right: 16px;
+    top: 12px;
+    font-size: 20px;
+    cursor: pointer;
+    z-index: 2;
+
+    &:hover {
+      color: #409EFF;
+    }
   }
 }
 </style>
