@@ -20,7 +20,7 @@
       <div class="component-container__btn" @click.self="isHide = !isHide">
         <i class="el-icon-caret-bottom" v-if="isHide"></i>
         <i class="el-icon-caret-top" v-else></i>
-        <el-tooltip effect="dark" content="复制" placement="top" open-delay="800">
+        <el-tooltip effect="dark" content="复制" placement="top" :open-delay="800">
           <i
             class="el-icon-document-copy component-container__copy"
             :id="name"
@@ -54,7 +54,7 @@ export default {
     });
 
     this.clipboard.on('error', () => {
-      this.$message.success('复制失败');
+      this.$message.error('复制失败');
     });
   },
   beforeDestroy() {
