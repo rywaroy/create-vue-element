@@ -22,7 +22,6 @@ export default {
 </script>
 
 <style lang="scss">
-@import './assets/reset.css';
 .wrap {
   width: 100vw;
   height: 100vh;
