@@ -6,8 +6,13 @@ import hljs from 'highlight.js';
 import App from './App.vue';
 import router from './router';
 import ComponentContainer from './component/ComponentContainer/index.vue';
+
 import InfoOverview from './packages/InfoOverview';
 import InfoOverviewItem from './packages/InfoOverviewItem';
+import InfoDetail from './packages/InfoDetail';
+import InfoDetailRow from './packages/InfoDetailRow';
+import InfoDetailItem from './packages/InfoDetailItem';
+
 import 'element-ui/lib/theme-chalk/index.css';
 import 'vue-hljs/dist/style.css';
 import './assets/reset.css';
@@ -20,6 +25,9 @@ Vue.component('ComponentContainer', ComponentContainer);
 
 Vue.use(InfoOverview);
 Vue.use(InfoOverviewItem);
+Vue.use(InfoDetail);
+Vue.use(InfoDetailRow);
+Vue.use(InfoDetailItem);
 
 new Vue({
   router,
