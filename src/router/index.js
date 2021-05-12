@@ -9,6 +9,11 @@ const routes = [
     name: 'dataView',
     component: () => import(/* webpackChunkName: "dataView" */ '../views/DataView/index.vue'),
   },
+  {
+    path: '/listpage',
+    name: 'listPage',
+    component: () => import(/* webpackChunkName: "listPage" */ '../views/ListPage/index.vue'),
+  },
 ];
 
 const router = new VueRouter({
