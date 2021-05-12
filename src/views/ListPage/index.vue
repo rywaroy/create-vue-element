@@ -6,7 +6,9 @@
       </base-container>
       <div class="list-page-main">
         <div class="list-page-menu">
-
+          <base-container name="nav-menu">
+            <nav-menu></nav-menu>
+          </base-container>
         </div>
         <div class="list-page-content">
         </div>
@@ -16,10 +18,12 @@
 </template>
 <script>
 import BaseHeader from './components/BaseHeader';
+import NavMenu from './components/NavMenu';
 
 export default {
   components: {
     BaseHeader,
+    NavMenu,
   },
 };
 </script>
@@ -48,6 +52,10 @@ export default {
     width: 180px;
     height: 100%;
     overflow-y: auto;
+
+    & > div {
+      height: 100%;
+    }
   }
 
   &-content {
