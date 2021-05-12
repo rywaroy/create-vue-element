@@ -1,17 +1,58 @@
 <template>
   <div class="list-page-wrap">
-    <div class="list-page"></div>
+    <div class="list-page">
+      <base-container name="base-header">
+        <base-header></base-header>
+      </base-container>
+      <div class="list-page-main">
+        <div class="list-page-menu">
+
+        </div>
+        <div class="list-page-content">
+        </div>
+      </div>
+    </div>
   </div>
 </template>
+<script>
+import BaseHeader from './components/BaseHeader';
+
+export default {
+  components: {
+    BaseHeader,
+  },
+};
+</script>
 <style lang="scss">
-.list-page-wrap {
-  width: 100%;
-  padding-top: 30px;
-}
 .list-page {
   width: 1200px;
   margin: 0 auto;
   border: 1px solid #000;
-  height: 500px;
+  height: 900px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+
+  &-wrap {
+    width: 100%;
+    padding-top: 30px;
+  }
+
+  &-main {
+    flex: 1;
+    display: flex;
+    overflow: hidden;
+  }
+
+  &-menu {
+    width: 180px;
+    height: 100%;
+    overflow-y: auto;
+  }
+
+  &-content {
+    flex: 1;
+    overflow-y: auto;
+  }
 }
 </style>
