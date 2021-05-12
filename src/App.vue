@@ -1,9 +1,16 @@
 <template>
   <div class="wrap">
     <div class="menu">
-      <el-menu default-active="数据展示">
-        <el-menu-item index="数据展示">
-          数据展示
+      <el-menu
+        router
+        :default-active="activePath"
+        background-color="#2d4464"
+        text-color="#fff">
+        <el-menu-item index="/">
+          <span slot="title">数据展示</span>
+        </el-menu-item>
+        <el-menu-item index="/listpage">
+          <span slot="title">列表页面</span>
         </el-menu-item>
       </el-menu>
     </div>
@@ -18,6 +25,14 @@
 
 export default {
   name: 'App',
+  data() {
+    return {
+      activePath: '/',
+    };
+  },
+  mounted() {
+    this.activePath = window.location.hash.slice(1);
+  },
 };
 </script>
 

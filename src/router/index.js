@@ -6,8 +6,8 @@ Vue.use(VueRouter);
 const routes = [
   {
     path: '/',
-    name: 'DataView',
-    component: () => import(/* webpackChunkName: "about" */ '../views/DataView/index.vue'),
+    name: 'dataView',
+    component: () => import(/* webpackChunkName: "dataView" */ '../views/DataView/index.vue'),
   },
 ];
 
