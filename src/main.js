@@ -5,7 +5,8 @@ import hljs from 'highlight.js';
 
 import App from './App.vue';
 import router from './router';
-import ComponentContainer from './component/ComponentContainer/index.vue';
+import ComponentContainer from './component/ComponentContainer';
+import BaseContainer from './component/BaseContainer';
 
 import InfoOverview from './packages/InfoOverview';
 import InfoOverviewItem from './packages/InfoOverviewItem';
@@ -22,6 +23,7 @@ Vue.config.productionTip = false;
 Vue.use(ElementUI);
 Vue.use(vueHljs, { hljs });
 Vue.component('ComponentContainer', ComponentContainer);
+Vue.component('BaseContainer', BaseContainer);
 
 Vue.use(InfoOverview);
 Vue.use(InfoOverviewItem);
