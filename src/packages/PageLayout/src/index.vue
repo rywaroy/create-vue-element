@@ -35,7 +35,7 @@ export default {
 .ve-page-layout-con {
   flex: 1;
   padding: 12px;
-  ove-rflow-x: hidden;
-  ove-rflow-y: auto;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 </style>
