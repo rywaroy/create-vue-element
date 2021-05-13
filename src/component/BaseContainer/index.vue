@@ -1,7 +1,6 @@
 <template>
   <div class="base-container">
-    <div class="base-container-mask" @click="handleClick()"></div>
-    <slot></slot>
+    <slot class="base-container-slot"></slot>
   </div>
 </template>
 <script>
@@ -19,19 +18,23 @@ export default {
 <style lang="scss">
 .base-container {
   position: relative;
-  &-mask {
-    opacity: 0.5;
+  z-index: 2;
+  &::after {
     position: absolute;
-    width: 100%;
-    height: 100%;
     left: 0;
+    right: 0;
     top: 0;
-    z-index: 99;
-    transition: background-color .3s;
+    bottom: 0;
+    display: block;
+    z-index: 1;
+    content: "";
     cursor: pointer;
-    &:hover {
-      background-color: #A7E8BD;
-    }
+
+  }
+
+  &:hover::after {
+    outline: 3px solid #e6a23c;
+    outline-offset: -3px;
   }
 }
 </style>
