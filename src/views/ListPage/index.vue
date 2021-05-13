@@ -11,6 +11,11 @@
           </base-container>
         </div>
         <div class="list-page-content">
+          <base-container name="page-layout">
+            <ve-page-layout title="标题">
+
+            </ve-page-layout>
+          </base-container>
         </div>
       </div>
     </div>
@@ -61,6 +66,14 @@ export default {
   &-content {
     flex: 1;
     overflow-y: auto;
+
+    & > div {
+      display: flex;
+      flex-direction: column;
+      background: #f1f2f5;
+      width: 100%;
+      height: 100%;
+    }
   }
 }
 </style>
