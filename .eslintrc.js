@@ -16,6 +16,8 @@ module.exports = {
     'func-names': 0,
     'max-len': 0,
     'import/extensions': 0,
+    'no-plusplus': 0,
+    'no-param-reassign': 0,
   },
   overrides: [
     {
