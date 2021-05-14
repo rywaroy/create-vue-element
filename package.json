@@ -1,13 +1,15 @@
 {
-  "name": "veui",
-  "version": "0.1.0",
-  "private": true,
+  "name": "veui.js",
+  "version": "0.1.3",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "test:unit": "vue-cli-service test:unit",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "build:prod": "rollup -c",
+    "build:W": "webpack"
   },
+  "main": "lib/index.js",
   "dependencies": {
     "clipboard": "^2.0.8",
     "core-js": "^3.6.5",
@@ -23,14 +25,28 @@
     "@vue/cli-plugin-router": "~4.5.0",
     "@vue/cli-plugin-unit-jest": "~4.5.0",
     "@vue/cli-service": "~4.5.0",
+    "@vue/compiler-sfc": "^3.0.11",
     "@vue/eslint-config-airbnb": "^5.0.2",
     "@vue/test-utils": "^1.0.3",
     "babel-eslint": "^10.1.0",
+    "babel-plugin-syntax-jsx": "^6.18.0",
+    "babel-plugin-transform-vue-jsx": "^3.7.0",
     "eslint": "^6.7.2",
     "eslint-plugin-import": "^2.20.2",
     "eslint-plugin-vue": "^6.2.2",
+    "glob": "^7.1.7",
     "node-sass": "^4.12.0",
+    "postcss": "^8.2.15",
+    "postcss-import": "^14.0.2",
+    "postcss-url": "^8.0.0",
+    "rollup": "^2.47.0",
+    "rollup-plugin-babel": "^4.4.0",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-postcss": "^4.0.0",
+    "rollup-plugin-terser": "^7.0.2",
+    "rollup-plugin-vue": "^5.1.9",
     "sass-loader": "^8.0.2",
+    "vue-loader": "^15.9.2",
     "vue-template-compiler": "^2.6.11"
   }
 }
