@@ -14,6 +14,7 @@ import InfoDetail from './packages/InfoDetail';
 import InfoDetailRow from './packages/InfoDetailRow';
 import InfoDetailItem from './packages/InfoDetailItem';
 import PageLayout from './packages/PageLayout';
+import SearchForm from './packages/SearchForm';
 
 import 'element-ui/lib/theme-chalk/index.css';
 import 'vue-hljs/dist/style.css';
@@ -32,6 +33,7 @@ Vue.use(InfoDetail);
 Vue.use(InfoDetailRow);
 Vue.use(InfoDetailItem);
 Vue.use(PageLayout);
+Vue.use(SearchForm);
 
 new Vue({
   router,
