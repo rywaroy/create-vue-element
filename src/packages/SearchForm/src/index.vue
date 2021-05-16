@@ -46,6 +46,11 @@
               end-placeholder="结束日期"/>
           </el-form-item>
 
+          <!-- Checkbox 选择框 -->
+          <el-form-item v-if="item.type === 'checkbox'" :label="item.label" :prop="item.value">
+            <el-checkbox v-model="form[item.value]" />
+          </el-form-item>
+
           <!-- 自定义label -->
           <ve-custom-label-form-item
             v-if="item.type === 'custom-label'"
