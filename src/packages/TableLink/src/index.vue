@@ -1,0 +1,40 @@
+<template>
+  <span class="ve-table-link" @click="handleClick">
+    <slot></slot>
+  </span>
+</template>
+<script>
+export default {
+  name: 'VeTableLink',
+  methods: {
+    handleClick(evt) {
+      this.$emit('click', evt);
+    },
+  },
+};
+</script>
+<style>
+.ve-table-link {
+  color: #2b82d8;
+  cursor: pointer;
+  margin-right: 8px;
+  padding-right: 8px;
+  font-size: 14px;
+  line-height: 1;
+  position: relative;
+}
+
+.ve-table-link:hover {
+  color: rgba(43, 130, 216, 0.7);
+}
+
+.ve-table-link::after {
+  content: ' ';
+  position: absolute;
+  width: 1px;
+  background-color: #e8e8e8;
+  height: 13px;
+  right: 0;
+  top: 3px;
+}
+</style>
