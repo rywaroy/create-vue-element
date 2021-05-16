@@ -13,9 +13,32 @@
         <div class="list-page-content">
           <base-container name="page-layout">
             <ve-page-layout title="标题">
-              <base-container name="search-form">
-                <ve-search-form :form.sync="form" :fieldList.sync="fieldList"></ve-search-form>
-              </base-container>
+              <section class="app-section">
+                <!-- 搜索表单 -->
+                <base-container name="search-form">
+                  <ve-search-form :form.sync="form" :fieldList.sync="fieldList"></ve-search-form>
+                </base-container>
+                <!-- 搜索表单 -->
+
+                <!-- 操作按钮 -->
+                <base-container name="list-action-bar">
+                  <ve-list-action-bar>
+                    <template #left>
+                      <el-select v-model="form.sort" size="small">
+                        <el-option value="条件1">条件1</el-option>
+                        <el-option value="条件2">条件2</el-option>
+                      </el-select>
+                    </template>
+                    <template #right>
+                      <el-button size="small" type="primary">按钮1</el-button>
+                      <el-button size="small" type="primary">按钮2</el-button>
+                      <el-button size="small" type="primary">按钮3</el-button>
+                    </template>
+                  </ve-list-action-bar>
+                </base-container>
+                <!-- 操作按钮 -->
+
+              </section>
             </ve-page-layout>
           </base-container>
         </div>
@@ -41,6 +64,8 @@ export default {
         年龄2: [3, 4],
         时间1: [new Date(2000, 10, 10, 10, 10), new Date(2000, 10, 11, 10, 10)],
         时间2: [],
+        married: false,
+        sort: '条件1',
       },
       fieldList: [
         {
@@ -80,6 +105,11 @@ export default {
           valueType: 'range-number',
         },
         {
+          label: '已婚',
+          value: 'married',
+          type: 'checkbox',
+        },
+        {
           type: 'custom-label',
           labelOptions: [{ label: '时间1', value: '时间1' }, { label: '时间2', value: '时间2' }],
           id: '时间',
@@ -88,6 +118,23 @@ export default {
           span: 12,
         },
       ],
+      tableData: [{
+        date: '2016-05-02',
+        name: '王小虎',
+        address: '上海市普陀区金沙江路 1518 弄',
+      }, {
+        date: '2016-05-04',
+        name: '王小虎',
+        address: '上海市普陀区金沙江路 1517 弄',
+      }, {
+        date: '2016-05-01',
+        name: '王小虎',
+        address: '上海市普陀区金沙江路 1519 弄',
+      }, {
+        date: '2016-05-03',
+        name: '王小虎',
+        address: '上海市普陀区金沙江路 1516 弄',
+      }],
     };
   },
   components: {
@@ -139,5 +186,10 @@ export default {
       height: 100%;
     }
   }
+}
+
+.app-section {
+  background: #fff;
+  padding: 20px;
 }
 </style>
