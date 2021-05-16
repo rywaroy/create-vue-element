@@ -38,6 +38,46 @@
                 </base-container>
                 <!-- 操作按钮 -->
 
+                <!-- 表格 -->
+                <base-container name="list-action-bar">
+                  <el-table
+                    :data="tableData">
+                    <el-table-column
+                      prop="date"
+                      label="日期"
+                      width="180">
+                    </el-table-column>
+                    <el-table-column
+                      prop="name"
+                      label="姓名"
+                      width="180">
+                    </el-table-column>
+                    <el-table-column
+                      prop="address"
+                      label="地址">
+                    </el-table-column>
+                    <el-table-column
+                      label="操作">
+                      <template>
+                        <base-container name="table-link-group">
+                          <ve-table-link-group>
+                            <ve-table-link>加减积分</ve-table-link>
+                            <ve-table-link>查看表决记录</ve-table-link>
+                            <ve-table-link>查看日志</ve-table-link>
+                            <ve-table-link>删除</ve-table-link>
+                          </ve-table-link-group>
+                        </base-container>
+                      </template>
+                    </el-table-column>
+                  </el-table>
+                  <el-pagination
+                    style="margin-top: 20px"
+                    background
+                    layout="prev, pager, next"
+                    :total="1000">
+                  </el-pagination>
+                </base-container>
+                <!-- 表格 -->
               </section>
             </ve-page-layout>
           </base-container>
