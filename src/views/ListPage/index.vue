@@ -11,7 +11,7 @@
           </base-container>
         </div>
         <div class="list-page-content">
-          <base-container name="page-layout">
+          <base-container name="page-layout" @click="openComponentDetail">
             <ve-page-layout title="标题">
               <section class="app-section">
                 <!-- 搜索表单 -->
@@ -89,6 +89,7 @@
 <script>
 import BaseHeader from './components/BaseHeader';
 import NavMenu from './components/NavMenu';
+import PageLayoutContainer from './components/PageLayoutContainer';
 
 export default {
   data() {
@@ -180,6 +181,17 @@ export default {
   components: {
     BaseHeader,
     NavMenu,
+  },
+  methods: {
+    openComponentDetail(name) {
+      switch (name) {
+        case 'page-layout':
+          this.$openDialog(PageLayoutContainer)();
+          break;
+        default:
+          break;
+      }
+    },
   },
 };
 </script>
