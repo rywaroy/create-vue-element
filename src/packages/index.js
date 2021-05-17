@@ -1,9 +1,15 @@
 import PageLayout from './PageLayout';
 import SearchForm from './SearchForm';
+import ListActionBar from './ListActionBar';
+import TableLink from './TableLink';
+import TableLinkGroup from './TableLinkGroup';
 
 const components = [
   PageLayout,
   SearchForm,
+  ListActionBar,
+  TableLink,
+  TableLinkGroup,
 ];
 
 const install = function (Vue) {
@@ -16,4 +22,6 @@ export default {
   install,
   PageLayout,
   SearchForm,
+  ListActionBar,
+  TableLinkGroup,
 };
