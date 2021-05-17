@@ -1,5 +1,5 @@
 <template>
-  <div class="base-container">
+  <div class="base-container" @click.stop="handleClick">
     <slot class="base-container-slot"></slot>
   </div>
 </template>
