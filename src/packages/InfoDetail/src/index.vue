@@ -16,20 +16,3 @@ export default {
   },
 };
 </script>
-<style lang="scss">
-.info-detail {
-  &__title {
-    font-size: 16px;
-    font-weight: 700;
-    line-height: 1.5715;
-    margin-bottom: 20px;
-    color: rgba(0, 0, 0, .85);
-  }
-
-  &__view {
-    table {
-      width: 100%;
-    }
-  }
-}
-</style>

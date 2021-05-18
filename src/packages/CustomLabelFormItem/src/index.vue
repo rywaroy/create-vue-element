@@ -99,33 +99,3 @@ export default {
   },
 };
 </script>
-<style lang="scss">
-.ve-custom-form-item {
-  display: flex;
-  padding-right: 20px;
-  margin-bottom: 13px;
-  margin-top: 5px;
-
-  .ve-custom-form-item__label {
-    width: 120px;
-
-    .el-select {
-      width: 100%;
-    }
-  }
-
-  .ve-custom-form-item__content {
-    flex: 1;
-    padding-left: 10px;
-
-    .el-select {
-      width: 100%;
-    }
-
-    & > div {
-      width: 100%;
-    }
-  }
-}
-
-</style>

@@ -46,31 +46,3 @@ export default {
   },
 };
 </script>
-<style lang="scss">
-.ve-range-number {
-  display: flex;
-  align-items: center;
-
-  &__text {
-    padding: 0 10px;
-  }
-
-  .el-input-number.is-controls-right .el-input__inner {
-    padding-left: 4px;
-    padding-right: 20px;
-  }
-
-  &__unit {
-    margin-left: 5px;
-    font-size: 14px;
-  }
-
-  .ve-range-number__input {
-    width: 50px;
-
-    .el-input-number__increase, .el-input-number__decrease {
-      width: 16px;
-    }
-  }
-}
-</style>

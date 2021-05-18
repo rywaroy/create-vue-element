@@ -13,13 +13,3 @@ export default {
   name: 'VeInfoOverview',
 };
 </script>
-<style lang="scss">
-.ve-info-overview {
-  padding: 24px;
-  background: #fff;
-
-  &__item:last-child {
-    border-right: 0;
-  }
-}
-</style>

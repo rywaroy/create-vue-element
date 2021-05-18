@@ -8,9 +8,3 @@ export default {
   name: 'VeFlexBox',
 };
 </script>
-<style lang="scss">
-.ve-flex-box {
-  display: flex;
-  flex-wrap: wrap;
-}
-</style>
