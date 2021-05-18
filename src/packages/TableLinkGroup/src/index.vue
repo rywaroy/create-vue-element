@@ -9,6 +9,11 @@ export default {
 };
 </script>
 <style>
+.ve-table-link-group {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
 .ve-table-link-group .ve-table-link:last-child {
   margin-right: 0;
   padding-right: 0;
