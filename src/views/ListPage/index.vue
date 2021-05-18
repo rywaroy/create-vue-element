@@ -64,7 +64,7 @@
                             <ve-table-link>加减积分</ve-table-link>
                             <ve-table-link>查看表决记录</ve-table-link>
                             <ve-table-link>查看日志</ve-table-link>
-                            <ve-table-link>删除</ve-table-link>
+                            <ve-table-link type="confirm" title="确认删除？" @confirm="deleteItem">删除</ve-table-link>
                           </ve-table-link-group>
                         </base-container>
                       </template>
@@ -191,6 +191,10 @@ export default {
         default:
           break;
       }
+    },
+
+    deleteItem() {
+      console.log('删除');
     },
   },
 };
