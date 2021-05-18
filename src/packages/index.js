@@ -4,6 +4,8 @@ import ListActionBar from './ListActionBar';
 import TableLink from './TableLink';
 import TableLinkGroup from './TableLinkGroup';
 
+import './index.scss';
+
 const components = [
   PageLayout,
   SearchForm,
@@ -23,5 +25,6 @@ export default {
   PageLayout,
   SearchForm,
   ListActionBar,
+  TableLink,
   TableLinkGroup,
 };
