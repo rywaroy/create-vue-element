@@ -1,14 +1,30 @@
 <template>
-  <span class="ve-table-link" @click="handleClick">
-    <slot></slot>
-  </span>
+  <div class="ve-table-link">
+    <el-popconfirm
+      v-if="type === 'confirm'"
+      v-bind="$attrs"
+      v-on="$listeners">
+      <span slot="reference">
+        <slot></slot>
+      </span>
+    </el-popconfirm>
+    <span v-else @click="handleClick"><slot></slot></span>
+  </div>
 </template>
 <script>
 export default {
   name: 'VeTableLink',
+  props: {
+    type: String,
+    url: String,
+  },
   methods: {
     handleClick(evt) {
-      this.$emit('click', evt);
+      if (this.type === 'link') {
+        this.$router.push(this.url);
+      } else {
+        this.$emit('click', evt);
+      }
     },
   },
 };
@@ -36,5 +52,9 @@ export default {
   height: 13px;
   right: 0;
   top: 3px;
+}
+
+.el-popconfirm__main {
+  margin: 10px 0;
 }
 </style>
