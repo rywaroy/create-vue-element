@@ -134,7 +134,7 @@ export default {
     },
 
     reset() {
-      this.$emit('update:form', this.initialForm);
+      this.$emit('update:form', deepClone(this.initialForm));
       this.$emit('reset');
     },
   },
